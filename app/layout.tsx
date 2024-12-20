@@ -5,8 +5,6 @@ import { ViewTransitions } from "next-view-transitions";
 import "./globals.css";
 import cx from "classnames";
 import { Navbar } from '../components/Navbar';
-import { CenterContent } from '../components/CenterContent';
-import { RightSidebar } from '../components/RightSidebar';
 
 const jost = Jost({
   subsets: ["latin"],
@@ -14,6 +12,32 @@ const jost = Jost({
 });
 
 const inter = Inter({ subsets: ["latin"] });
+
+function Footer() {
+  const links = [
+    { name: 'read.cv', url: 'https://read.cv/jeffreysaeteros' },
+    { name: 'linkedin', url: 'https://www.linkedin.com/in/jeffrey-saeteros/' },
+    { name: 'github', url: 'https://github.com/jeffreysaeteros' },
+  ];
+
+  return (
+    <footer className="text-center">
+      <div className="flex justify-center space-x-4">
+        {links.map((link) => (
+          <a
+            key={link.name}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="dark:text-white text-black hover:text-blue-500 transition-colors duration-200"
+          >
+            {link.name}
+          </a>
+        ))}
+      </div>
+    </footer>
+  );
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jeffreysaeteros.com'),
@@ -26,26 +50,26 @@ export const metadata: Metadata = {
   },
   description: 'Developer, cyclist, amateur footballer, watch enthusiast.',
 };
-
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <ViewTransitions>
-      <html
-        lang="en"
-        className={cx('text-black bg-white dark:text-white dark:bg-[#111010]', jost.className)}
-      >
-        <body className="antialiased tracking-tight">
-          <div className="min-h-screen flex flex-col justify-between ">
-            <main className="flex flex-row mt-8">
-              <Navbar />
-              <div className="basis-4/5 w-full flex flex-row">
-                <CenterContent>{children}</CenterContent>
-                <RightSidebar />
-              </div>
-            </main>
-          </div>
-        </body>
-      </html>
-    </ViewTransitions>
+    <html
+      lang="en"
+      className={cx(
+        "text-black bg-white dark:text-white dark:bg-[#111010]",
+        jost.className
+      )}
+    >
+      <body className="antialiased tracking-tight">
+        <div className="min-h-screen flex flex-col justify-between pt-0 md:pt-8 p-8">
+          <main className="flex">
+            <Navbar />
+            <main className="">{children}</main>
+          </main>
+          <Footer />
+        </div>
+      </body>
+    </html>
   );
 }

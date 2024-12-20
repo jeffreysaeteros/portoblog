@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @theme {
-  --font-family-sans: 'Inter', sans-serif;
+  --font-family-sans: "Inter", sans-serif;
 }
 
 :root {
@@ -52,7 +52,7 @@ pre {
 }
 
 code {
-  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  font-family: "Menlo", "Monaco", "Courier New", monospace;
   font-size: 14px;
   padding: 0.2em 0.4em;
   border-radius: 0.3em;
@@ -84,13 +84,13 @@ hr {
   color: var(--color-gray-200);
 }
 
-custom-text-color{
+custom-text-color {
   color: #111010;
 }
 
 /* Remove Safari input shadow on mobile */
-input[type='text'],
-input[type='email'] {
+input[type="text"],
+input[type="email"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;

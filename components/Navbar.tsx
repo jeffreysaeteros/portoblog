@@ -16,7 +16,7 @@ const navItems = {
 
 export const Navbar = () => {
     return (
-        <div className=" flex flex-col mr-8">
+        <div className="sticky top-0 flex flex-col mr-32">
             <div className="text-4xl">
                 <Link href="/">
                     jeffrey saeteros
