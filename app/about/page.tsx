@@ -1,4 +1,4 @@
-import Posts from "@/components/Posts";
+import Posts from "@/app/components/Posts";
 import Image from "next/image";
 import profilePic from "/public/images/profile.jpg";
 import React from "react";
