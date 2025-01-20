@@ -1,27 +1,29 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import './globals.css';
 import cx from "classnames";
+import type { Metadata } from 'next';
 import localFont from 'next/font/local'
-import { Navbar } from '../components/Navbar';
+import { Sidebar } from './components/sidebar';
 
-const yourFont = localFont({
+const Futura = localFont({
   src: [
     {
-      path: '../public/fonts/futura/Futura Std Bold Oblique.ttf',
-      weight: '400',
-      style: 'normal',
+      path: '../public/fonts/futura/Futura Book.ttf',
+      weight: '300',
     },
     {
-      path: '../public/fonts/futura/Futura Std Bold Oblique.ttf',
+      path: '../public/fonts/futura/Futura Std Medium.ttf',
+      weight: '400',
+    },
+    {
+      path: '../public/fonts/futura/Futura Bold.ttf',
       weight: '700',
-      style: 'normal',
     },
   ],
-  variable: '--font-yourFont',
+  variable: '--font-futura',
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://jeffreysaeteros.com'),
+  metadataBase: new URL('https://jeffreysaeteros.com/'),
   alternates: {
     canonical: '/',
   },
@@ -35,16 +37,23 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={cx(
-        "text-black bg-white dark:text-white dark:bg-[#111010]")}
-    >
-      <body className="antialiased tracking-tight">
-        <div className="min-h-screen flex px-8">
-          <Navbar />
-          <div className="flex flex-col overflow-y-auto scrollbar-hide">
-            <main className="flex-grow p-6">{children}</main>
+    <html lang="en" className={`${Futura.variable}`}>
+      <body className={`antialiased tracking-tight bg-white dark:bg-black ${Futura.className}`}>
+        <div className=" flex min-h-screen">
+          {/* Sidebar */}
+          <div className="flex-shrink-0 sticky top-0 h-screen">
+            <Sidebar />
+          </div>
+
+          {/* <div className="w-[1px] bg-gray-300"></div> */}
+
+          {/* Main Content */}
+          <div className="flex-grow overflow-y-auto">
+            <div className="flex flex-col justify-between flex-1 p-8 ">
+              <main className="max-w-[80ch] mx-auto w-full space-y-6">
+                {children}
+              </main>
+            </div>
           </div>
         </div>
       </body>
