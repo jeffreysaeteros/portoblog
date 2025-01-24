@@ -12,10 +12,13 @@
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.1.5",
+    "@radix-ui/react-slot": "^1.1.1",
     "@types/mdx": "^2.0.13",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "create-next-app": "^14.2.15",
     "framer-motion": "^11.2.10",
+    "lucide-react": "^0.473.0",
     "next": "^15.1.2",
     "next-mdx-remote": "^5.0.0",
     "next-view-transitions": "^0.3.4",
@@ -26,8 +29,9 @@
     "rehype-highlight": "^7.0.1",
     "rehype-slug": "^6.0.0",
     "sugar-high": "^0.8.1",
-    "tailwind-merge": "^2.3.0",
-    "tailwind-scrollbar-hide": "^2.0.0"
+    "tailwind-merge": "^2.6.0",
+    "tailwind-scrollbar-hide": "^2.0.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^20",
