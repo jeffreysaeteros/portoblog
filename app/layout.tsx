@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     default: 'Jeffrey Saeteros',
     template: '%s | Jeffrey Saeteros',
   },
+  icons: {
+    icon: '/endless.png',
+  },
 };
 
 export default function RootLayout({
@@ -38,7 +41,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${Futura.variable}`}>
-      <body className={`antialiased tracking-tight bg-white dark:bg-black ${Futura.className}`}>
+      <body className={`antialiased tracking-tight bg-white ${Futura.className}`}>
         <div className=" flex min-h-screen">
           {/* Sidebar */}
           <div className="flex-shrink-0 sticky top-0 h-screen">

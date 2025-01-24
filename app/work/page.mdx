@@ -1,4 +1,12 @@
 import { Link } from 'next-view-transitions';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb"
 
 export const metadata = {
   title: 'Work',
@@ -13,6 +21,17 @@ export function Sub({ children }) {
 }
 
 # Work
+<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/">Home</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbPage>Work</BreadcrumbPage>
+    </BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>
 
 ## PeopleTime LLC
 <Sub>Flutter Developer | February 2023 - Present</Sub>
