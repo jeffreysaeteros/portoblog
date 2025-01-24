@@ -1,5 +1,5 @@
 import React, { ComponentPropsWithoutRef } from 'react';
-import Link from "next/link";
+import { Link } from 'next-view-transitions';
 import { highlight } from 'sugar-high';
 
 type HeadingProps = ComponentPropsWithoutRef<'h1'>;
@@ -11,23 +11,23 @@ type BlockquoteProps = ComponentPropsWithoutRef<'blockquote'>;
 
 const components = {
     h1: (props: HeadingProps) => (
-        <h1 className="text-black dark:text-white font-bold pt-12 mb-0 fade-in" {...props} />
+        <h1 className="font-medium pt-12 mb-0 fade-in" {...props} />
     ),
     h2: (props: HeadingProps) => (
-        <h2 className="text-gray-800 dark:text-white font-medium mt-8 mb-3" {...props} />
+        <h2 className="text-gray-800 font-medium mt-8 mb-3" {...props} />
     ),
     h3: (props: HeadingProps) => (
-        <h3 className="text-gray-800 dark:text-white font-normal mt-8 mb-3" {...props} />
+        <h3 className="text-gray-800 font-light mt-8 mb-3" {...props} />
     ),
-    h4: (props: HeadingProps) => <h4 className="font-normal" {...props} />,
+    h4: (props: HeadingProps) => <h4 className="font-medium" {...props} />,
     p: (props: ParagraphProps) => (
-        <p className="text-gray-800 dark:text-white font-light leading-snug" {...props} />
+        <p className="text-gray-800 leading-snug" {...props} />
     ),
     ol: (props: ListProps) => (
-        <ol className="text-gray-800 dark:text-white list-decimal pl-5 space-y-2" {...props} />
+        <ol className="text-gray-800 list-decimal pl-5 space-y-2" {...props} />
     ),
     ul: (props: ListProps) => (
-        <ul className="text-gray-800 dark:text-white list-disc pl-5 space-y-1" {...props} />
+        <ul className="text-gray-800 list-disc pl-5 space-y-1" {...props} />
     ),
     li: (props: ListItemProps) => <li className="pl-1" {...props} />,
     em: (props: ComponentPropsWithoutRef<'em'>) => (
@@ -37,19 +37,12 @@ const components = {
         <strong className="font-medium" {...props} />
     ),
     a: ({ href, children, ...props }: AnchorProps) => {
-        const className = 'text-blue-500 hover:text-blue-700';
+        const className = 'text-blue-500 hover:text-blue-700 transition-colors duration-200';
         if (href?.startsWith('/')) {
             return (
                 <Link href={href} className={className} {...props}>
                     {children}
                 </Link>
-            );
-        }
-        if (href?.startsWith('#')) {
-            return (
-                <a href={href} className={className} {...props}>
-                    {children}
-                </a>
             );
         }
         return (
@@ -90,7 +83,7 @@ const components = {
     ),
     blockquote: (props: BlockquoteProps) => (
         <blockquote
-            className="ml-[0.075em] border-l-3 border-gray-300 pl-4 text-gray-700 dark:text-white"
+            className="ml-[0.075em] border-l-3 border-gray-300 pl-4 text-gray-700"
             {...props}
         />
     ),
