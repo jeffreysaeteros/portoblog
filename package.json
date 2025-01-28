@@ -17,6 +17,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "create-next-app": "^14.2.15",
+    "cx": "^24.11.4",
     "framer-motion": "^11.2.10",
     "lucide-react": "^0.473.0",
     "next": "^15.1.2",
