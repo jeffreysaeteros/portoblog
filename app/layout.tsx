@@ -50,7 +50,7 @@ export default function RootLayout({
           {/* <div className="w-[1px] bg-gray-300"></div> */}
 
           {/* Main Content */}
-          <div className="flex-grow overflow-y-auto">
+          <div className="flex-grow overflow-y-auto pt-12">
             <div className="flex flex-col justify-between flex-1 p-8 ">
               <main className="max-w-[80ch] mx-auto w-full space-y-6">
                 {children}
