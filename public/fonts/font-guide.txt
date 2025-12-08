@@ -1,0 +1,5 @@
+H1 -> Futura STD Bold
+H2 -> Futura STD Heavy
+H3 -> Futura STD Medium
+
+P -> Futura STD Light
