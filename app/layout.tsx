@@ -3,19 +3,37 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local'
 import { Sidebar } from './components/sidebar';
 
+// const Futura = localFont({
+//   src: [
+//     {
+//       path: '../public/fonts/futura/Futura Book.ttf',
+//       weight: '300',
+//     },
+//     {
+//       path: '../public/fonts/futura/Futura Std Medium.ttf',
+//       weight: '400',
+//     },
+//     {
+//       path: '../public/fonts/futura/Futura Bold.ttf',
+//       weight: '700',
+//     },
+//   ],
+//   variable: '--font-futura',
+// });
+
 const Futura = localFont({
   src: [
-    {
-      path: '../public/fonts/futura/Futura Book.ttf',
-      weight: '300',
-    },
+    // {
+    //   path: '../public/fonts/futura/Futura Std Book.ttf',
+    //   weight: '300',
+    // },
+    // {
+    //   path: '../public/fonts/futura/Futura Std Heavy.ttf',
+    //   weight: '700',
+    // },
     {
       path: '../public/fonts/futura/Futura Std Medium.ttf',
-      weight: '400',
-    },
-    {
-      path: '../public/fonts/futura/Futura Bold.ttf',
-      weight: '700',
+
     },
   ],
   variable: '--font-futura',
