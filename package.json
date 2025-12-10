@@ -20,7 +20,7 @@
     "cx": "^24.11.4",
     "framer-motion": "^11.2.10",
     "lucide-react": "^0.473.0",
-    "next": "^15.1.2",
+    "next": "^15.5.7",
     "next-mdx-remote": "^5.0.0",
     "next-view-transitions": "^0.3.4",
     "postgres": "^3.4.5",
